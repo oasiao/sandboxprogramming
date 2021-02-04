@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TIELE</title>
+</head>
+<body>
+<h1>Hola mundo</h1>
+<div id="library">
+
+</div>
+<script>
+    fetch("/openAddBook")
+        .then(response => response.json())
+        .then(data => {
+            console.log("fetchfinish");
+            console.log(data);
+            let content="";
+            /*
+            data.forEach(item=>{
+                content+=`
+                    <p>{$item.isbnn}-{$item.title}-${item.yearOfPublication}</p>`
+                ;
+            });*/
+
+            document.getElementById('library').innerHTML=data.title;
+        });
+</script>
+</body>
+</html>
